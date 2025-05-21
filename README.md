@@ -6,7 +6,7 @@
 A simple string extension library for detecting Palindromes.
 
 ## Examples
-```chsarp
+```csharp
 string input = "racecar";
 bool isPalindrome = input.IsPalindrome(); // true
 ```
