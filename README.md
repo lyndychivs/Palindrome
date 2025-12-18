@@ -1,4 +1,4 @@
-[![Mutation testing badge](https://img.shields.io/endpoint?style=for-the-badge&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Flyndychivs%2FPalindrome%2Fmaster)](https://dashboard.stryker-mutator.io/reports/github.com/lyndychivs/Palindrome/master)
+[![Mutation testing badge](https://img.shields.io/endpoint?style=for-the-badge&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Flyndychivs%2FPalindrome%2Fmain)](https://dashboard.stryker-mutator.io/reports/github.com/lyndychivs/Palindrome/main)
 [![NuGet Downloads](https://img.shields.io/nuget/dt/lyndychivs.Palindrome?style=for-the-badge&logo=nuget)](https://www.nuget.org/packages/lyndychivs.Palindrome/)
 
 # lyndychivs.Palindrome
@@ -20,7 +20,7 @@ bool isPalindrome = input.IsPalindrome(); // false
 ```
 
 ## Tests
-All Unit Tests can be found under the [Palindrome.Tests](https://github.com/lyndychivs/Palindrome/tree/master/Palindrome.Tests) namespace.
+All Unit Tests can be found under the [Palindrome.Tests](https://github.com/lyndychivs/Palindrome/tree/main/Palindrome.Tests) namespace.
 
 ## Package
 Available on:

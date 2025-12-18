@@ -1,10 +1,31 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197
+# Visual Studio Version 18
+VisualStudioVersion = 18.1.11312.151 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Palindrome", "Palindrome\Palindrome.csproj", "{92C1C5F1-E807-42E5-B809-57311908FEC8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Palindrome.Tests", "Palindrome.Tests\Palindrome.Tests.csproj", "{DE87104F-2296-4A23-B791-9B3FEA3903A2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{947C8A90-0E3F-4FED-8313-1D6D63D6007F}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+		SECURITY.md = SECURITY.md
+		stryker-config.json = stryker-config.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{F44D5337-6A83-41F7-AE05-104E6BCD3EAB}"
+	ProjectSection(SolutionItems) = preProject
+		.github\dependabot.yml = .github\dependabot.yml
+		.github\FUNDING.yml = .github\FUNDING.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{23BEFBEC-6F25-44BE-90C9-0BF3B3E46339}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\dotnet-stryker-action.yml = .github\workflows\dotnet-stryker-action.yml
+		.github\workflows\build-test-publish.yml = .github\workflows\build-test-publish.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +44,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{23BEFBEC-6F25-44BE-90C9-0BF3B3E46339} = {F44D5337-6A83-41F7-AE05-104E6BCD3EAB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2A13F784-C78C-411C-8E36-A29F6B8E6144}
