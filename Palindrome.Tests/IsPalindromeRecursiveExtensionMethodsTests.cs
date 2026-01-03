@@ -1,9 +1,9 @@
-﻿namespace Palindrome.Tests;
+namespace Palindrome.Tests;
 
 using NUnit.Framework;
 
 [TestFixture]
-internal class IsPalindromeRecursiveExtensionMethodsTests
+internal sealed class IsPalindromeRecursiveExtensionMethodsTests
 {
     [Test]
     public void IsPalindromeRecursive_ValidEvenPalindrome_ReturnsTrue()
@@ -67,8 +67,8 @@ internal class IsPalindromeRecursiveExtensionMethodsTests
 
     [TestCase("")]
     [TestCase(" ")]
-    [TestCase(null)]
-    public void IsPalindromeRecursive_InvalidInput_ReturnsFalse(string? input)
+    [TestCase(null!)]
+    public void IsPalindromeRecursive_InvalidInput_ReturnsFalse(string input)
     {
         bool result = input.IsPalindromeRecursive();
 

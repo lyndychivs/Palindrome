@@ -1,9 +1,9 @@
-﻿namespace Palindrome.Tests;
+namespace Palindrome.Tests;
 
 using NUnit.Framework;
 
 [TestFixture]
-internal class IsPalindromeIterativeIterativeExtensionMethodsTests
+internal sealed class IsPalindromeIterativeIterativeExtensionMethodsTests
 {
     [Test]
     public void IsPalindromeIterative_ValidEvenPalindrome_ReturnsTrue()
@@ -67,8 +67,8 @@ internal class IsPalindromeIterativeIterativeExtensionMethodsTests
 
     [TestCase("")]
     [TestCase(" ")]
-    [TestCase(null)]
-    public void IsPalindromeIterative_InvalidInput_ReturnsFalse(string? input)
+    [TestCase(null!)]
+    public void IsPalindromeIterative_InvalidInput_ReturnsFalse(string input)
     {
         bool result = input.IsPalindromeIterative();
 

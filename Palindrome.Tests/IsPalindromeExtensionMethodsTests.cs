@@ -1,9 +1,9 @@
-﻿namespace Palindrome.Tests;
+namespace Palindrome.Tests;
 
 using NUnit.Framework;
 
 [TestFixture]
-internal class IsPalindromeExtensionMethodsTests
+internal sealed class IsPalindromeExtensionMethodsTests
 {
     [Test]
     public void IsPalindrome_ValidEvenPalindrome_ReturnsTrue()
@@ -67,8 +67,8 @@ internal class IsPalindromeExtensionMethodsTests
 
     [TestCase("")]
     [TestCase(" ")]
-    [TestCase(null)]
-    public void IsPalindrome_InvalidInput_ReturnsFalse(string? input)
+    [TestCase(null!)]
+    public void IsPalindrome_InvalidInput_ReturnsFalse(string input)
     {
         bool result = input.IsPalindrome();
 

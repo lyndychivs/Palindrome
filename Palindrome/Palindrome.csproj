@@ -1,55 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <OutputType>Library</OutputType>
-    <SignAssembly>False</SignAssembly>
-    <ErrorReport>prompt</ErrorReport>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Title>Palindrome</Title>
-    <Version>1.0.0</Version>
-    <Authors>lyndychivs</Authors>
-    <Description>A simple string extension library for detecting Palindromes.</Description>
-    <PackageProjectUrl>https://github.com/lyndychivs/Palindrome</PackageProjectUrl>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <RepositoryUrl>https://github.com/lyndychivs/Palindrome</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageTags>palindrome;palindromes;is;true;false;input</PackageTags>
-    <NeutralLanguage>en</NeutralLanguage>
-    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
-    <PackageId>lyndychivs.Palindrome</PackageId>
-    <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
-    <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <PackageReleaseNotes>
-    </PackageReleaseNotes>
-    <EnableNETAnalyzers>True</EnableNETAnalyzers>
-    <AnalysisLevel>latest</AnalysisLevel>
-    <PackageIcon>Palindrome.png</PackageIcon>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DebugType>none</DebugType>
-    <WarningLevel>9999</WarningLevel>
-    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
-    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <WarningLevel>9999</WarningLevel>
-    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
-    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
-  </PropertyGroup>
-  <ItemGroup>
-    <None Remove="Resources\Palindrome.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\Palindrome.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </EmbeddedResource>
-  </ItemGroup>
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <PackageId>lyndychivs.Palindrome</PackageId>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\README.md">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+        <EmbeddedResource Include="Resources\Palindrome.png">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </EmbeddedResource>
+    </ItemGroup>
+
 </Project>
