@@ -1,0 +1,45 @@
+<Project>
+
+    <!-- Microsoft.Testing.Platform: test projects must be executables -->
+    <PropertyGroup Condition="'$(IsTestProject)' == 'true'">
+        <OutputType>Exe</OutputType>
+    </PropertyGroup>
+
+    <!-- Auto-inject NUnit test infrastructure when NUnit is referenced -->
+    <Target Name="_InjectNUnitInfrastructure" BeforeTargets="CollectPackageReferences">
+        <ItemGroup>
+            <_NUnitRef Include="@(PackageReference)" Condition="'%(Identity)' == 'NUnit'" />
+        </ItemGroup>
+        <ItemGroup Condition="'@(_NUnitRef)' != ''">
+            <PackageReference Include="NUnit3TestAdapter">
+                <TreatAsUsed>true</TreatAsUsed>
+            </PackageReference>
+            <PackageReference Include="Microsoft.Testing.Extensions.TrxReport" />
+            <PackageReference Include="NUnit.Analyzers">
+                <PrivateAssets>all</PrivateAssets>
+                <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            </PackageReference>
+        </ItemGroup>
+    </Target>
+
+    <!-- Enforce that any project named *.Tests has IsTestProject=true -->
+    <Target Name="ValidateTestProjectConvention" BeforeTargets="Build">
+        <Error
+            Condition="$(MSBuildProjectName.EndsWith('.Tests')) AND '$(IsTestProject)' != 'true'"
+            Text="'$(MSBuildProjectName)' ends in '.Tests' but IsTestProject is not set to 'true'." />
+    </Target>
+
+    <!-- Enforce required NuGet metadata on packable projects -->
+    <Target Name="ValidatePackageMetadata" BeforeTargets="Build" Condition="'$(GeneratePackageOnBuild)' == 'True'">
+        <Error
+            Condition="'$(PackageId)' == ''"
+            Text="'$(MSBuildProjectName)' has GeneratePackageOnBuild=true but PackageId is not set." />
+        <Error
+            Condition="'$(PackageIcon)' == ''"
+            Text="'$(MSBuildProjectName)' has GeneratePackageOnBuild=true but PackageIcon is not set." />
+        <Error
+            Condition="'$(GenerateDocumentationFile)' != 'True'"
+            Text="'$(MSBuildProjectName)' has GeneratePackageOnBuild=true but GenerateDocumentationFile is not true." />
+    </Target>
+
+</Project>

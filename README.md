@@ -1,8 +1,8 @@
-[![Build & Test](https://github.com/lyndychivs/Palindrome/actions/workflows/build-test.yml/badge.svg?branch=main)](https://github.com/lyndychivs/Palindrome/actions/workflows/build-test.yml)
+# lyndychivs.Palindrome
+
+[![Build & Test](https://github.com/lyndychivs/Palindrome/actions/workflows/build-test.yaml/badge.svg?branch=main)](https://github.com/lyndychivs/Palindrome/actions/workflows/build-test.yaml)
 [![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Flyndychivs%2FPalindrome%2Fmain)](https://dashboard.stryker-mutator.io/reports/github.com/lyndychivs/Palindrome/main)
 [![NuGet Downloads](https://img.shields.io/nuget/dt/lyndychivs.Palindrome?style=flat&logo=nuget)](https://www.nuget.org/packages/lyndychivs.Palindrome/)
-
-# lyndychivs.Palindrome
 
 A simple string extension library for detecting Palindromes.
 

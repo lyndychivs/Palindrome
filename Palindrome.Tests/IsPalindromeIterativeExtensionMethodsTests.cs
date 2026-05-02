@@ -3,7 +3,7 @@ namespace Palindrome.Tests;
 using NUnit.Framework;
 
 [TestFixture]
-internal sealed class IsPalindromeIterativeIterativeExtensionMethodsTests
+internal sealed class IsPalindromeIterativeExtensionMethodsTests
 {
     [Test]
     public void IsPalindromeIterative_ValidEvenPalindrome_ReturnsTrue()

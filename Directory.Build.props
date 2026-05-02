@@ -4,8 +4,6 @@
     </PropertyGroup>
     <PropertyGroup>
         <TargetFramework>net10.0</TargetFramework>
-
-        <OutputType>Library</OutputType>
         <Configurations>Debug;Release</Configurations>
 
         <LangVersion>latest</LangVersion>
@@ -48,17 +46,25 @@
         <NeutralLanguage>en</NeutralLanguage>
     </PropertyGroup>
 
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-        <Optimize>true</Optimize>
-        <DebugType>full</DebugType>
-        <DebugSymbols>true</DebugSymbols>
-        <WarningLevel>9999</WarningLevel>
+
+    <ItemGroup>
+        <PackageReference Include="StyleCop.Analyzers">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Meziantou.Analyzer">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <PropertyGroup Condition="'$(IsTestProject)' == 'true'">
+        <IsPackable>false</IsPackable>
     </PropertyGroup>
 
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-        <Optimize>false</Optimize>
-        <DebugType>full</DebugType>
-        <DebugSymbols>true</DebugSymbols>
-        <WarningLevel>9999</WarningLevel>
+    <!-- Microsoft.Testing.Platform: opt-in to NUnit runner for test projects -->
+    <PropertyGroup Condition="$(MSBuildProjectName.EndsWith('.Tests'))">
+        <EnableNUnitRunner>true</EnableNUnitRunner>
+        <TestingPlatformShowTestsFailure>true</TestingPlatformShowTestsFailure>
     </PropertyGroup>
 </Project>
