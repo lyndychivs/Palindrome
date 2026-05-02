@@ -1,4 +1,4 @@
-.PHONY: help build clean test mutate stryker-install
+.PHONY: help build clean test mutate stryker-install perf
 
 # Variables
 
@@ -11,6 +11,9 @@ build: ## Build the Solution in Release mode
 
 test: ## Run Tests
 	dotnet test --project Palindrome.Tests/Palindrome.Tests.csproj --configuration Release --no-build
+
+perf: ## Run Performance Tests
+	dotnet run --project Palindrome.PerformanceTests/Palindrome.PerformanceTests.csproj --configuration Release
 
 clean: ## Clean Palindrome build artifacts
 	dotnet clean

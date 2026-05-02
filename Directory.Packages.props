@@ -4,6 +4,7 @@
         <CentralPackageFloatingVersionsEnabled>true</CentralPackageFloatingVersionsEnabled>
     </PropertyGroup>
     <ItemGroup>
+        <PackageVersion Include="BenchmarkDotNet" Version="0.15.8" />
         <PackageVersion Include="Meziantou.Analyzer" Version="3.*" />
         <PackageVersion Include="Microsoft.Testing.Extensions.TrxReport" Version="2.*" />
         <PackageVersion Include="NUnit" Version="4.*" />

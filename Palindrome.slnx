@@ -2,7 +2,6 @@
     <Configurations>
         <BuildType Name="Debug" />
         <BuildType Name="Release" />
-        <BuildType Name="Stryker" />
     </Configurations>
     <Folder Name="/.github/">
         <File Path=".github/dependabot.yaml" />
@@ -38,5 +37,6 @@
         <File Path="stryker-config.json" />
     </Folder>
     <Project Path="Palindrome/Palindrome.csproj" />
+    <Project Path="Palindrome.PerformanceTests/Palindrome.PerformanceTests.csproj" />
     <Project Path="Palindrome.Tests/Palindrome.Tests.csproj" />
 </Solution>
