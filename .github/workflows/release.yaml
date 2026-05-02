@@ -51,12 +51,13 @@ jobs:
                   action_fail_on_inconclusive: true
 
             - name: NuGet Login
+              id: nuget-login
               uses: NuGet/login@v1
               with:
                   user: ${{ secrets.NUGET_USER }}
 
             - name: NuGet Push to NuGet.org
-              run: dotnet nuget push **.nupkg --source "https://api.nuget.org/v3/index.json" --skip-duplicate
+              run: dotnet nuget push **.nupkg --api-key "${{ steps.nuget-login.outputs.NUGET_API_KEY }}" --source "https://api.nuget.org/v3/index.json" --skip-duplicate
 
             - name: NuGet Push to GitHub Packages
               run: dotnet nuget push **.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} --source "https://nuget.pkg.github.com/lyndychivs/index.json" --skip-duplicate
