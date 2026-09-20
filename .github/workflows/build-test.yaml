@@ -6,6 +6,7 @@ permissions:
     pull-requests: write
 on:
     push:
+    workflow_dispatch:
     schedule:
         - cron: "0 4 * * SUN"
 jobs:
