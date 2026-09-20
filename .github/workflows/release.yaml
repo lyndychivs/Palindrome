@@ -1,11 +1,17 @@
 name: Release
-run-name: Release ${{ github.ref_name }}
+run-name: Release ${{ inputs.tag || github.ref_name }}
 permissions:
     contents: write
     checks: write
 on:
     release:
         types: [published]
+    workflow_dispatch:
+        inputs:
+            tag:
+                description: Existing release tag to build and publish (e.g. v1.2.3)
+                required: true
+                type: string
 jobs:
     build-test-publish:
         runs-on: ubuntu-latest
@@ -17,14 +23,17 @@ jobs:
             packages: write
         env:
             CONFIGURATION: Release
+            TAG: ${{ inputs.tag || github.ref_name }}
         steps:
             - name: Checkout Repository
               uses: actions/checkout@v7
+              with:
+                  ref: ${{ inputs.tag || github.ref }}
 
             - name: Get Version from Release Tag
               id: get_version
               run: |
-                  VERSION=${GITHUB_REF_NAME#v}
+                  VERSION=${TAG#v}
                   echo "version=$VERSION" >> $GITHUB_OUTPUT
                   echo "Building release version: $VERSION"
 
@@ -66,6 +75,7 @@ jobs:
             - name: Upload NuGet Package to Release
               uses: softprops/action-gh-release@v3
               with:
+                  tag_name: ${{ env.TAG }}
                   files: |
                       **/*.nupkg
                       **/*.snupkg
