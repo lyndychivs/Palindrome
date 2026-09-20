@@ -23,4 +23,5 @@ stryker-install: ## Install Stryker .NET tool
 	dotnet tool install dotnet-stryker
 
 mutate: ## Run Stryker Mutation Testing
+	dotnet tool restore
 	dotnet stryker --config-file stryker-config.json
